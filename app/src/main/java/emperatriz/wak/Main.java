@@ -37,9 +37,15 @@ public class Main extends Activity {
                 wv.setVisibility(View.VISIBLE);
             }
         });
-
-
     }
 
+    @Override
+    public void onBackPressed() {
+        if (wv.canGoBack()) {
+            wv.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
 
 }
